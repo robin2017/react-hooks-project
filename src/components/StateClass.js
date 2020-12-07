@@ -1,12 +1,15 @@
 import React from 'react'
-class StateClass extends React.Component{
-    constructor(){
+class StateClass extends React.Component {
+    constructor() {
         super();
         this.state = {
-            name:'类'
+            name: '类'
         }
     }
-    render(){
+    componentDidMount() {
+        console.log('类组件结束渲染')
+    }
+    render() {
         return (
             <div>
                 这是一个类组件-{this.state.name}
