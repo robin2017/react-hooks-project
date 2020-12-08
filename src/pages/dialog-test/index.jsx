@@ -14,7 +14,9 @@ export default () => {
       >
         弹框
       </Button>
-      <MyDialog visible={visible} setVisible={setVisible} data={list} />
+      <MyDialog visible={visible}
+       setVisible={setVisible} 
+       data={list} />
     </div>
   );
 };
