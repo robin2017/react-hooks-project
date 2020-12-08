@@ -1,16 +1,14 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react'
+import React, { useState, useMemo, } from 'react'
 
 function StateFunction() {
-    const [greeting, setGreeting] = useState('你好')
-    //useEffect会有闪屏，useLayoutEffect不会
-    useLayoutEffect(() => {
-        console.log('问候语:', greeting)
-        if (greeting === '内心草泥马') {
-            setGreeting('你好')
-        }
-    }, [greeting])
+    const [num, setNum] = useState(1)
+    const [age, setAge] = useState(18)
+    const doubleNum = useMemo(() => {
+        console.log('获取双倍num')
+        return 2 * num
+    }, [num])
     return <div onClick={() => {
-        setGreeting('内心草泥马')
-    }}>这是一个函数组件-{greeting}</div>
+        setAge(age + 1)
+    }}>这是一个函数组件-{doubleNum}</div>
 }
 export default StateFunction
