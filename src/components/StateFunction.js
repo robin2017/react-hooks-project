@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback} from 'react'
+import React, { useState, useMemo, useCallback } from 'react'
 const set = new Set()
 function StateFunction() {
     const [num, setNum] = useState(1)
@@ -8,7 +8,7 @@ function StateFunction() {
         return 2 * num
     }, [num])
     set.add(doubleNum)
-    console.log('set的size：',set.size)
+    console.log('set的size：', set.size)
     return <div onClick={() => {
         setAge(age + 1)
     }}>这是一个函数组件-{doubleNum()}</div>
